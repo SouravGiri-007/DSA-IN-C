@@ -45,5 +45,7 @@ int main()
     third->next = NULL;
 
     linkedlistTraversal(head);
+    head = insertAtFirst(head , 56);
     
+    linkedlistTraversal(head);
 }
