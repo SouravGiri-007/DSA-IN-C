@@ -39,6 +39,38 @@ void linkedlistTraversal(struct Node *ptr)
         return head;
 
  }
+ // case 3: Deleting the NULL/LAST element from the linked list
+ struct Node* DeleteNullElement(struct Node* head)
+ {
+    struct Node* p = head;
+    struct Node* q = head->next;
+        while(q->next!=NULL)
+        {
+            p = p->next;
+            q = q->next;
+        }
+        p->next = NULL;
+        free(q);
+        return head;
+ }
+
+//  case 4: Deleting node by value
+ struct Node* deleteAtValue(struct Node *head, int value){
+        struct Node* p = head;
+        struct Node* q = head->next;
+        while(q->data!=value && q->next!=NULL)
+        {
+            p = p->next;
+            q = q->next;
+        }
+        if(q->data==value)
+        {
+            p->next=q->next;
+            free(q);
+        }
+        return head;
+
+ }
 int main()
 {
     struct Node *head;
@@ -70,9 +102,9 @@ int main()
     printf("Linked List before deletion\n");
     linkedlistTraversal(head);
 
-    head = deleteFirst(head); // fordeleting first element of the linked list
-    head= deleteAtIndex(head, 2);
-    //head = deleteFirst(head);
+    //head = deleteFirst(head); // fordeleting first element of the linked list
+    //head= deleteAtIndex(head, 2);
+    head = DeleteNullElement(head);
 
     printf("Linked List after deletion\n");
     linkedlistTraversal(head);
