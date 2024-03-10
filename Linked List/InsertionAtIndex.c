@@ -29,6 +29,7 @@ struct Node * insertAtIndex(struct Node *head, int data, int index)
     ptr->data = data;
     ptr->next=p->next;
     p->next=ptr;
+    return head;
 }
 int main()
 {
