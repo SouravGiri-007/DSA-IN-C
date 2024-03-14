@@ -58,7 +58,7 @@ int main()
     int n;
     int max;
 
-    printf("Enter size of a struct: ");
+    printf("Enter size of a stack: ");
     scanf("%d",&max);
     int a[max];
     printf("Stack has been created successfully\n");
